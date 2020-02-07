@@ -1,0 +1,649 @@
+\documentclass{amsart}
+\usepackage{amscd,amssymb}
+\usepackage{fullpage}
+\usepackage{pb-diagram,lamsarrow,pb-lams}
+\usepackage{verbatim}
+
+\newcommand{\bbm}       {\left(\begin{matrix}}
+\newcommand{\bsm}       {\left(\begin{smallmatrix}}
+\newcommand{\ebm}       {\end{matrix}\right)}
+\newcommand{\esm}       {\end{smallmatrix}\right)}
+\newcommand{\img}       {\operatorname{image}}
+\newcommand{\tors}      {\operatorname{tors}}
+
+\newcommand{\C}         {{\mathbb{C}}}
+\newcommand{\N}         {{\mathbb{N}}}
+\newcommand{\Q}         {{\mathbb{Q}}}
+\newcommand{\R}         {{\mathbb{R}}}
+\newcommand{\Z}         {{\mathbb{Z}}}
+\newcommand{\Zpl}       {{\mathbb{Z}_{(p)}}}      
+
+\newcommand{\al}        {\alpha}
+\newcommand{\alb}       {\overline{\alpha}}
+\newcommand{\bt}        {\beta} 
+\newcommand{\gm}        {\gamma}
+\newcommand{\dl}        {\delta}
+\newcommand{\lm}        {\lambda}
+\newcommand{\sg}        {\sigma}
+
+\newcommand{\ov}[1]     {\overline{#1}}
+\newcommand{\sm}        {\setminus}
+\newcommand{\sse}       {\subseteq}
+\newcommand{\tm}        {\times}
+\newcommand{\CRR}       {C^\infty(\R,\R)}
+\newcommand{\CRC}       {C^\infty(\R,\C)}
+\newcommand{\xra}       {\xrightarrow}
+\newcommand{\st}        {\;|\;}
+\newcommand{\ip}[1]     {\langle #1\rangle}
+\newcommand{\op}        {\oplus}
+\newcommand{\half}      {{\textstyle\frac{1}{2}}}
+\newcommand{\CP}        {{\mathcal{P}}}
+
+\newcommand{\blank}     {\;\underline{\hspace{8em}}\;}
+
+\newcommand{\blockmat}[4]{
+ \left(\begin{array}{c|c} #1&#2 \\ \hline #3&#4\end{array}\right)}
+\newcommand{\blockvec}[2]{
+ \left(\begin{array}{c} #1 \\ \hline #2\end{array}\right)}
+
+\renewcommand{\:}{\colon}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}[section]
+
+\newenvironment{answer}{{\noindent \bf Answer:}}{\bigskip}
+
+\begin{document}
+\title{Rings, modules and linear algebra --- short exercises}
+\author{N.~P.~Strickland}
+\date{\today}
+\bibliographystyle{abbrv}
+
+\maketitle 
+
+\section{Introduction}
+
+\section{Rings and Fields}
+
+\begin{question}
+ Why is $3\Z$ not a ring?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ It does not contain the multiplicative identity element $1$.
+\end{answer}
+
+\begin{question}
+ Why is $\Z_6$ not an integral domain?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ Because $\ov{2}$ and $\ov{3}$ are nonzero elements of $\Z_6$ whose
+ product is zero.
+\end{answer}
+
+\begin{question}
+ Which of the following is an element of $\Z[x]$: $x+x^{-1}$,
+ $10x^{10}$, $x^5/5$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ Only $10x^{10}$ is an element of $\Z[x]$.
+\end{answer}
+
+\begin{question}
+ Which of the following is an element of $\Z_{(3)}$: $3/5$, $5/3$,
+ $1/12$, $1/13$. 
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ Only $3/5$ and $1/13$ are elements of $\Z_{(3)}$
+\end{answer}
+
+\begin{question}
+ What is a Gaussian integer?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ A Gaussian integer is a complex number of the form $a+bi$ where $a$
+ and $b$ are integers.
+\end{answer}
+
+\section{Modules}
+
+\begin{question}
+ What is the other name for a module over $\C$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ A vector space over $\C$.
+\end{answer}
+
+\begin{question}
+ What is the other name for a module over $\Z$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ An Abelian group.
+\end{answer}
+
+\section{Modules over polynomial rings}
+
+\begin{question}
+ If $A=\bsm 2&0\\0&3\esm$ and $f(x)=x^2+1$ then what is $f(A)$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $f(A)=\bsm 5&0\\0&10\esm$.
+\end{answer}
+
+\begin{question}
+ If $A=\bsm 1&1\\0&1\esm$ and $f(x)=x^2+1$ then what is $f(A)$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $f(A)=\bsm 2&2\\0&2\esm$.
+\end{answer}
+
+\begin{question}
+ If $A=\bsm 1&2&3\\4&5&6\\7&8&9\esm$ (considered as a matrix over
+ $\Q$) then what is the dimension of $M_A$ as a vector space over
+ $\Q$? 
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The dimension is just the number of rows or columns in the matrix,
+ which is $3$.
+\end{answer}
+
+\begin{question}
+ If we regard $\CRR$ as a module over $\R[D]$ in the usual way, what
+ is $(1+D).t^2$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $(1+D).t^2=t^2+2t$.
+\end{answer}
+
+\begin{question}
+ A module over $\C[x]$ consists of a \blank $V$ over $\C$ together
+ with \blank.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ A module over $\C[x]$ consists of a vector space $V$ over $\C$ together
+ with a $\C$-linear endomorphism of $V$.
+\end{answer}
+
+\section{General module theory}
+
+\begin{question}
+ What is another name for a submodule of an Abelian group (considered
+ as a $\Z$-module)?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ A subgroup.
+\end{answer}
+
+\begin{question}
+ Let $M$ be a module over a ring $R$.  List two submodules of $M$ that
+ can be defined without knowing anything at all about $R$ or $M$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\{0\}$ and $M$ itself.
+\end{answer}
+
+\begin{question}
+ Let $V$ be a vector space over $\R$ equipped with an endomorphism
+ $\phi$, regarded as an $\R[x]$-module in the usual way.  A vector
+ subspace $W\leq V$ is an $\R[x]$-submodule if and only if \blank.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ A vector subspace $W\leq V$ is an $\R[x]$-submodule if and only if
+ it is stable under $\phi$.
+\end{answer}
+
+\begin{question}
+ Why is $\R[t]$ an $\R[D]$-submodule of $\CRR$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ Because the derivative of a polynomial is another polynomial, so
+ $\R[t]$ is stable under $\partial$.
+\end{answer}
+
+\begin{question}
+ If $A=\bsm 1&1\\1&1\esm$ and $B=\bsm 2&2\\2&2\esm$ then what is the
+ matrix $A\op B$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $A\op B=\bsm 1&1&0&0\\1&1&0&0\\0&0&2&2\\0&0&2&2\esm$.
+\end{answer}
+
+\begin{question}
+ Describe two nontrivial subgroups of $\Z_{12}$ such that $\Z_{12}$ is
+ the internal direct sum of these subgroups.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\Z_{12}$ is the internal direct sum of the subgroups
+ $N_0=\{\ov{0},\ov{3},\ov{6},\ov{9}\}$ and
+ $N_1=\{\ov{0},\ov{4},\ov{8}\}$.
+\end{answer}
+
+\begin{question}
+ Put $W_0=\{f\in\CRR\st f'=f\}$ and $W_1=\{f\in\CRR\st f'=-f\}$.  What
+ is $W_0\cap W_1$ and why?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $W_0\cap W_1=\{0\}$, because if $f\in W_0\cap W_1$ then $f'=f$ and
+ $f'=-f$ so $f=-f$ so $f=0$.
+\end{answer}
+
+\begin{question}
+ What is a cyclic module?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ A module $M$ over $R$ is cyclic if there is an element $m\in M$ such
+ that every other element of $M$ is a multiple of $m$.
+\end{answer}
+
+\begin{question}
+ Give an example of a cyclic module over $\R[D]$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The space $W_2$ of polynomials of the form $at^2+bt+c$ is a cyclic
+ module over $\R[D]$, as discussed in the notes.  Of course one can
+ specify examples in other ways, for example $\R[D]/(D-5)$ or $\R[D]$
+ itself.  
+\end{answer}
+
+\section{Homomorphisms}
+
+\begin{question}
+ Give an example of a homomorphism $\dl\:R^2\xra{}R^3$ of
+ $R$-modules. 
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The example in the notes is $\dl(u,v)=(u,v-u,-v)$, although of course
+ there are infinitely many other examples.
+\end{answer}
+
+\begin{question}
+ Is there a homomorphism $\al\:\Z_6\xra{}\Z_{15}$ of Abelian groups
+ with $\al(\ov{m})=\ov{10m}$ for all $m\in\Z$?
+\end{question}
+%\vspace{4ex}
+
+\begin{question}
+ How can we describe the $R$-module homomorphisms from $R^4$ to $R^5$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ They are essentially the same as the $4\tm 5$ matrices over $R$.
+\end{answer}
+
+\begin{question}
+ Suppose we have $K$-vector spaces $V$ and $W$ considered as $K[x]$
+ modules using endomorphisms $\phi\:V\xra{}V$ and $\psi\:W\xra{}W$.
+ Suppose that $\al\:V\xra{}W$ is a $K$-linear map.  When is $\al$ a
+ homomorphism of $K[x]$-modules?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ This holds if and only if $\al\phi=\psi\al$.
+\end{answer}
+
+\begin{question}
+ Let $A$ be a $3\tm 3$ diagonalisable matrix over $\C$ with
+ eigenvalues $5$, $6$ and $7$.  Describe another module over $\C[x]$
+ that $M_A$ is isomorphic to.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $M_A\simeq M_5\op M_6\op M_7$.
+\end{answer}
+
+\begin{question}
+ Define $\al\:\Z\xra{}\Z_{12}$ by $\al(n)=\ov{4n}$.  What are
+ $\img(\al)$ and $\ker(\al)$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\img(\al)=\{\ov{0},\ov{4},\ov{8}\}$ and
+ $\ker(\al)=\{n\in\Z\st n=0\pmod{3}\}=3\Z$. 
+\end{answer}
+
+\begin{question}
+ Suppose we have modules $L$, $M$ and $N$ and homomorphisms
+ $L\xra{\al}M\xra{\bt}N$.  What does it mean to say that this sequence
+ is exact?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The sequence is exact if and only if the image of $\al$ is the same
+ as the kernel of $\bt$.
+\end{answer}
+
+\begin{question}
+ Suppose that $\al\:M\xra{}N$ is a homomorphism.  Give a criterion in
+ terms of kernels and images for $\al$ to be an isomorphism.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\al$ is an isomorphism if and only if $\ker(\al)=\{0\}$ and
+ $\img(\al)=N$.
+\end{answer}
+
+\section{Factor modules}
+
+\section{Ideals and factor rings}
+
+\begin{question}
+ Give an example of an ideal in $\Z$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The set of even integers is an ideal in $\Z$.
+\end{answer}
+
+\begin{question}
+ Put $I=\{f\in \Z[x]\st f(2)=0\}$.  Find a nonzero element of $I$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The polynomial $x-2$ is the simplest answer, although there are of
+ course many others.
+\end{answer}
+
+\begin{question}
+ What is the definition of the standard homomorphism
+ $\pi\:R\xra{}R/I$? 
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ It is defined by $\pi(a)=a+I$.
+\end{answer}
+
+\begin{question}
+ Which well-known field is isomorphic to $\R[x]/(x^2+1)$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\R[x]/(x^2+1)$ is isomorphic to $\C$.
+\end{answer}
+
+\begin{question}
+ Let $M$ be an Abelian group such that $5m=0$ for all $m\in M$.  Over
+ which factor ring can we regard $M$ as a module?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $M$ can be regarded as a module over $\Z/5$.
+\end{answer}
+
+\section{Euclidean domains}
+
+\begin{question}
+ If we use the standard Euclidean valuations defined in the notes,
+ what are the valuations of the elements $-7\in\Z$, $2+2i\in\Z[i]$,
+ $1+x+x^2\in\Q[x]$ and $18/7\in\Z_{(3)}$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ \begin{align*}
+  \nu_{\Z}(-7) &= |-7| = 7 \\
+  \nu_{\Z[i]}(2+2i) &= 2^2 + 2^2 = 8 \\
+  \nu_{\Q[x]}(1+x+x^2) &= 2 \\
+  \nu_{\Z_{(3)}}(18/7) &= \nu_{\Z_{(3)}}(3^2\tm 2/7) = 2.
+ \end{align*}
+\end{answer}
+
+\begin{question}
+ What is the main theorem about ideals in Euclidean domains?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ Every ideal in a Euclidean domain is principal.
+\end{answer}
+
+\begin{question}
+ Give a condition in terms of ideals that is satisfied if and only if
+ $d$ is a gcd of $a$ and $b$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $d$ is a gcd of $a$ and $b$ if and only if $Rd=Ra+Rb$.
+\end{answer}
+
+\section{Factorisation in Euclidean domains}
+
+\begin{question}
+ Write down a unit, an irreducible element, and a reducible element of
+ $\Z$.  
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $-1$ is a unit, $3$ is an irreducible element, $4$ is a reducible
+ element. 
+\end{answer}
+
+\begin{question}
+ Write down a unit, an irreducible element, and a reducible element of
+ $\C[x]$.  
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $7$ is a unit, $x-3$ is an irreducible element, and
+ $x^2-1=(x-1)(x+1)$ is a reducible element.
+\end{answer}
+
+\begin{question}
+ Write down a complete set of irreducibles in $\C[x]$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The set $\{x-\al\st \al\in\C\}$ is a complete set of irreducibles in
+ $\C[x]$. 
+\end{answer}
+
+\begin{question}
+ What special property does the ring $R/p$ have when $R$ is a
+ Euclidean domain and $p$ is irreducible?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $R/p$ is a field.
+\end{answer}
+
+\begin{question}
+ If $\nu$ is a Euclidean valuation on a ring $R$ and $a\in R$
+ satisfies $\nu(a)=0$, what can you say about $a$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $a$ is a unit.
+\end{answer}
+
+\section{Finite free modules over a Euclidean domain}
+
+\begin{question}
+ Put $N=\{(w,x,y,z)\in\Z^4\st w=x \text{ and } y=z\}$.  Give a basis
+ for $N$. 
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ If $n_1=(1,1,0,0)$ and $n_2=(0,0,1,1)$ then $\{n_1,n_2\}$ is a basis
+ for $N$. 
+\end{answer}
+
+\begin{question}
+ Why is $\Z_{12}$ not free as a $\Z$-module?
+\end{question}
+%\vspace{4ex}
+\begin{answer} 
+ The element $\ov{1}\in\Z_{12}$ satisfies $\ov{1}\neq 0$ but
+ $12.\ov{1}=0$ so $\Z_{12}$ is not torsion-free so it is not free.
+\end{answer}
+
+\begin{question}
+ List two torsion elements of $\CRR$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The functions $f(t)=e^t$ and $g(t)=t$ are torsion elements, because
+ $(D-1)f=D^2g=0$. 
+\end{answer}
+
+\begin{question}
+ Explain why no submodule of $\Z^{12}$ can be isomorphic to $\Z_{12}$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ Every submodule of $\Z^{12}$ is free, but $\Z_{12}$ is not free.
+\end{answer}
+
+
+\section{Row and column operations}
+
+\begin{question}
+ Which of the following matrices over $\Z$ is in normal form?
+ $\bsm 2&0&0&0&0\\0&4&0&0&0\\0&0&8&0&0\\0&0&0&0&0\\0&0&0&0&0\esm$,
+ $\bsm 8&0&0\\0&4&0\\0&0&2\esm$, $\bsm 2&0&0\\0&4&0\\0&0&8\esm$,
+ $\bsm 1&1\\1&1\esm$, $\bsm 1&0\\0&0\\0&0\esm$,
+ $\bsm 0&1\\0&0\\0&0\esm$, $\bsm 0&0\\0&1\\0&0\esm$,
+ $\bsm 2&0\\0&22\esm$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ The matrices
+ $\bsm 2&0&0&0&0\\0&4&0&0&0\\0&0&8&0&0\\0&0&0&0&0\\0&0&0&0&0\esm$,
+ $\bsm 2&0&0\\0&4&0\\0&0&8\esm$,
+ $\bsm 1&0\\0&0\\0&0\esm$ and
+ $\bsm 2&0\\0&22\esm$ are in normal form.
+\end{answer}
+
+\begin{question}
+ Which of the following matrices over $\Z$ is in prenormal form?
+ $\bsm 2&1&4\\1&3&4\\1&5&6\esm$, $\bsm 2&0&0\\0&3&4\\0&5&6\esm$,
+ $\bsm 2&0&0\\0&4&4\\0&6&6\esm$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ Only the matrix $\bsm 2&0&0\\0&4&4\\0&6&6\esm$ is in prenormal form.
+\end{answer}
+
+\section{Finite subgroups of fields}
+
+\begin{question}
+ Let $K$ be a field with precisely $27$ elements.  What can you say
+ about the group $K^\tm$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ It is isomorphic to $C_{26}$.
+\end{answer}
+
+\begin{question}
+ Give a generator of the group $\Z_{11}^\tm$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\ov{2}$ generates $\Z_{11}^\tm$.
+\end{answer}
+
+\begin{question}
+ Give a generator of the group $\Z_7^\tm$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\ov{3}$ generates $\Z_7^\tm$.
+\end{answer}
+
+\section{Primary decomposition}
+
+\begin{question}
+ List three different basic $\Z$-modules.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\Z/5$, $\Z/5^2=\Z/25$ and $\Z/7$ are basic $\Z$-modules.
+\end{answer}
+
+\begin{question}
+ Note that $42=6\tm 7$ and $(6,7)=1$.  What can you deduce about
+ $\Z_{42}$? 
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ It is isomorphic to $\Z_6\tm\Z_7$.
+\end{answer}
+
+\begin{question}
+ How many different groups of order $36$ are there (up to
+ isomorphism)?  
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ There are four possibilities, listed below:
+ \begin{align*}
+  M &\simeq \Z_4\op\Z_9 \\
+  M &\simeq \Z_4\op\Z_3\op\Z_3 \\
+  M &\simeq \Z_2\op\Z_2\op\Z_9 \\
+  M &\simeq \Z_2\op\Z_2\op\Z_3\op\Z_3.
+ \end{align*}
+\end{answer}
+
+\begin{question}
+ What is the definition of $F_p^k(M)$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $F_p^k(M)=\{m\in p^{k-1}M\st pm=0\}$.
+\end{answer}
+
+\begin{question}
+ What are $g_3^5(\Z/2^5)$, $g_3^5(\Z/3^6)$ and $g_3^5(\Z/3^5)$?
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $0$, $0$ and $1$.
+\end{answer}
+
+\begin{question}
+ Let $A$ be a $3\tm 3$ diagonal matrix with eigenvalues $5$, $6$ and
+ $7$.  Write $M_A$ in terms of basic $\C[x]$-modules.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $M_A\simeq B(5,1)\op B(6,1)\op B(7,1)$.
+\end{answer}
+
+\section{Canonical forms for square matrices }
+
+\begin{question}
+ Write down the Jordan block of size $3$ and eigenvalue $-1$.
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\bsm -1&1&0\\0&-1&1\\0&0&-1\esm$.
+\end{answer}
+
+\begin{question}
+ What is the characteristic polynomial of the matrix
+ $\bsm 2&0\\0&1\esm$? 
+\end{question}
+%\vspace{4ex}
+\begin{answer}
+ $\det\bsm t-2&0\\0&t-1\esm=(t-2)(t-1)=t^2-3t+2$.
+\end{answer}
+
+\end{document}
